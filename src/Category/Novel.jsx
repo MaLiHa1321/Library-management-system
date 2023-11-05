@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Novel = ({book,targetCategory}) => {
 
@@ -6,7 +7,7 @@ const Novel = ({book,targetCategory}) => {
                 ,photo,des,quantity
                 ,rating,_id,type} = book;
             const filteredBook = book.filter(books => (books.type === targetCategory));
-            console.log(filteredBook)
+            // console.log(filteredBook)
             return (
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
                      {filteredBook?.map((book, index) => (
@@ -20,16 +21,11 @@ const Novel = ({book,targetCategory}) => {
                     <p className='text-base'>Brand: {book.type}</p>
                     <p className='text-base'>Quantity: {book.quantity}</p>
                     <p className='text-base'>Rating: {book.rating}</p>
-                    {/* <div className="card-actions justify-end">
-                   
-                    
-                        <Link to={`/updateDetails/${phone._id}`}>
-                 <button className="btn btn-primary">Update</button>
-                        </Link>
-                        <Link to={`/proDetails/${phone._id}`}>
+                    <div className="card-actions justify-end">
+                        <Link to={`/bookDetails/${book._id}`}>
                  <button className="btn btn-primary">Details</button>
                         </Link>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
          ))}

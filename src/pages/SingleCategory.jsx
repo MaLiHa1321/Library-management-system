@@ -30,11 +30,11 @@ const SingleCategory = () => {
         .catch(err => console.log(err))
     },[url1,axios])
 
-    console.log(book)
+    // console.log(book)
   
     return (
         <div>
-          {/* <h2>{category.categories_name}</h2> */}
+       
           {category ? (
                 <h2>{category.categories_name}</h2>
             ) : (
