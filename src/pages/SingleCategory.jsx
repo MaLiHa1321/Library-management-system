@@ -8,7 +8,7 @@ import Novel from '../Category/Novel';
 const SingleCategory = () => {
 
     const [cateBook, setCateBook] = useState([])
-    const [book, setBook] = useState([])
+    const [book, setBook] = useState(null)
     const axios = useAxios()
     const {id} = useParams();
   
@@ -20,7 +20,8 @@ const SingleCategory = () => {
         .then(res => setCateBook(res.data))
         .catch(err => console.log(err))
     }, [url,axios])
-    const category = cateBook?.find(cate => cate._id === (id))
+    console.log(cateBook)
+    const category = cateBook?.find(cate => cate?._id === (id))
     const targetCategory = category?.categories_name;
 
     // all book
@@ -30,13 +31,14 @@ const SingleCategory = () => {
         .catch(err => console.log(err))
     },[url1,axios])
 
-    // console.log(book)
+    console.log(book)
   
     return (
         <div>
        
           {category ? (
-                <h2>{category.categories_name}</h2>
+                <h2>{category?.categories_name}</h2>
+
             ) : (
                 <p>Category not found</p>
             )}
@@ -45,11 +47,15 @@ const SingleCategory = () => {
   {/*  categories type data load*/}
   <div> 
    
-                {book ? 
-                  <Novel book={book} targetCategory={targetCategory} />
-                 : (
-                    <p>Loading categories data...</p>
-                )}
+  {book ? (
+    Array.isArray(book.result) ? (
+      <Novel book={book.result} targetCategory={targetCategory} />
+    ) : (
+      <p>book is not an array</p>
+    )
+  ) : (
+    <p>Loading categories data...</p>
+  )}
             </div>
  
 

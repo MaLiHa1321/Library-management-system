@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import toast, { Toaster } from 'react-hot-toast';
 import useAxios from '../../hooks/useAxios';
+import Container from '../../routes/Container';
 const AddBooks = () => {
          
 
@@ -53,6 +54,8 @@ const AddBooks = () => {
      
     }
         return (
+            <Container>
+
             <div>
                    <Toaster
             position="top-right"
@@ -127,6 +130,7 @@ const AddBooks = () => {
                  </div>
                 
             </div>
+            </Container>
         );
     };
     

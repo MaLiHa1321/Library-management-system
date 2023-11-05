@@ -1,0 +1,148 @@
+
+[
+    {
+      "name": "The Mystery of the Sultans games",
+      "photo": "https://i.ibb.co/sRLCyy6/2767052-SY475.jpg",
+      "type": "Novel",
+      "des": "A thrilling mystery novel set in a haunted mansion.",
+      "quantity": 10,
+      "author": "John Doe",
+      "rating": 4.5
+    },
+    {
+      "name": "The kill moking bird",
+      "photo": "https://i.ibb.co/SDkLZrr/download-9.jpg",
+      "type": "Drama",
+      "des": "Join the adventure to find the lost treasure of the ancient city.",
+      "quantity": 15,
+      "author": "Alice Smith",
+      "rating": 4.2
+    },
+    {
+      "name": "Robison Cruse",
+      "photo": "https://i.ibb.co/fScD8GB/download-8.jpg",
+      "type": "Thriller",
+      "des": "Uncover the dark secrets that will send chills down your spine.",
+      "quantity": 8,
+      "author": "Eleanor Brown",
+      "rating": 4.7
+    },
+    {
+      "name": "The Pilgrims progess",
+      "photo": "https://i.ibb.co/jR1KRch/download-7.jpg",
+      "type": "Sci-Fi",
+      "des": "Embark on a space journey through the galaxies of the future.",
+      "quantity": 12,
+      "author": "Michael Johnson",
+      "rating": 4.0
+    },
+    {
+      "name": "A raise and fall",
+      "photo": "https://i.ibb.co/d0H1kg0/e56a272466a2058fe98908e2ce022364.jpg",
+      "type": "Drama",
+      "des": "A classic tale of love and sacrifice in two cities.",
+      "quantity": 20,
+      "author": "Charles Dickens",
+      "rating": 4.9
+    },
+    {
+      "name": "The QED",
+      "photo": "https://i.ibb.co/99581fg/md31417694531.jpg",
+      "type": "Novel",
+      "des": "A suspenseful mystery with a silent witness to the crime.",
+      "quantity": 7,
+      "author": "Sophia Adams",
+      "rating": 4.3
+    },
+    {
+      "name": "The helloween",
+      "photo": "https://i.ibb.co/RcRZ6Tp/halloween-skull-poster-23-2147568257.jpg",
+      "type": "Thriller",
+      "des": "Start the chase to uncover hidden treasures and secrets.",
+      "quantity": 18,
+      "author": "Robert Green",
+      "rating": 4.6
+    },
+    {
+      "name": "The Haunting Shadows",
+      "photo": "https://i.ibb.co/NrCnPXM/realistic-horror-movie-poster-23-2149721019.jpg",
+      "type": "Thriller",
+      "des": "Haunted by shadows, a thrilling tale of suspense awaits.",
+      "quantity": 11,
+      "author": "Olivia White",
+      "rating": 4.4
+    },
+    {
+      "name": "The science of joy",
+      "photo": "https://i.ibb.co/mb631zK/71-Kc1-T2-RTXL-AC-UF1000-1000-QL80.jpg",
+      "type": "Sci-Fi",
+      "des": "Explore the paradoxes of time travel in this gripping novel.",
+      "quantity": 9,
+      "author": "David Anderson",
+      "rating": 4.1
+    },
+    {
+      "name": "The Great Gatsby",
+      "photo": "https://i.ibb.co/WWtc2sJ/cvr9780743223133-9780743223133-hr.jpg",
+      "type": "Drama",
+      "des": "The dazzling world of Jay Gatsby and the American Dream.",
+      "quantity": 16,
+      "author": "F. Scott Fitzgerald",
+      "rating": 4.8
+    },
+    {
+      "name": "The Enchanted Garden",
+      "photo": "https://i.ibb.co/VTnp4jW/hand-drawn-international-literacy-day-52683-42390.jpg",
+      "type": "Novel",
+      "des": "Discover the secrets hidden within the enchanted garden.",
+      "quantity": 14,
+      "author": "Laura Wilson",
+      "rating": 4.2
+    },
+    {
+      "name": "The Quest for Atlantis",
+      "photo": "https://i.ibb.co/fXV7p2H/charles-darwin-origin-species-book-1308-130764.jpg",
+      "type": "Sci-Fi",
+      "des": "Embark on a daring quest to find the lost city of Atlantis.",
+      "quantity": 13,
+      "author": "Samuel Clark",
+      "rating": 4.5
+    },
+    {
+      "name": "The death is calling",
+      "photo": "https://i.ibb.co/TBVJsgV/realistic-horror-movie-poster-template-23-2149621940.jpg",
+      "type": "Thriller",
+      "des": "A relentless pursuit by a silent and mysterious stalker.",
+      "quantity": 6,
+      "author": "Emily Turner",
+      "rating": 4.6
+    },
+    {
+      "name": "The ongrowth and form",
+      "photo": "https://i.ibb.co/XZs2Bdr/download-6.jpg",
+      "type": "Sci-Fi",
+      "des": "Journey through the cosmos in a thrilling cosmic adventure.",
+      "quantity": 12,
+      "author": "Benjamin Harris",
+      "rating": 4.0
+    },
+    {
+      "name": "Teams of rivel",
+      "photo": "https://i.ibb.co/gTbK5p7/download-5.jpg",
+      "type": "Drama",
+      "des": "A timeless tale of love and tragedy in Verona.",
+      "quantity": 22,
+      "author": "William Shakespeare",
+      "rating": 4.9
+    },
+    {
+      "name": "The book day",
+      "photo": "https://i.ibb.co/JRnbFwy/watercolor-world-book-day-vertical-poster-template-23-2149306886.jpg",
+      "type": "Novel",
+      "des": "A thrilling heist under the cover of midnight darkness.",
+      "quantity": 10,
+      "author": "Daniel Roberts",
+      "rating": 4.3
+    }
+  ]
+  

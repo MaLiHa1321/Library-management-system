@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Container from '../routes/Container';
 
 const BookDeatils = () => {
     const bookData = useLoaderData()
     // console.log(Object.keys(bookData).join(','))
     const {_id,name,photo,type,des,quantity,author,rating} = bookData
     return (
+        <Container>
+
         <div className='border border-black p-5'>
             <img src={photo} alt="" />
             <h2>{name}</h2>
@@ -23,6 +26,7 @@ const BookDeatils = () => {
 
             </div>
         </div>
+        </Container>
     );
 };
 

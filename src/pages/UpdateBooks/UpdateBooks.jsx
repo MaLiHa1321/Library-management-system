@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useAxios from '../../hooks/useAxios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
+import Container from '../../routes/Container';
 
 const UpdateBooks = () => {
     const booksData = useLoaderData()
@@ -52,6 +53,8 @@ const UpdateBooks = () => {
      
     }
     return (
+        <Container>
+
         <div>
         <Toaster
  position="top-right"
@@ -126,6 +129,7 @@ const UpdateBooks = () => {
       </div>
      
  </div>
+        </Container>
     );
 };
 
