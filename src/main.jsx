@@ -14,6 +14,7 @@ import Register from './Auth/Register.jsx';
 import AddBooks from './pages/AddBooks/AddBooks.jsx';
 import PrivateRoute from './PrivateRoutes/PrivateRoute.jsx';
 import ErrorElement from './comonents/ErrorPage/ErrorElement.jsx';
+import SingleCategory from './pages/SingleCategory.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,6 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
      
-        
       },
      
       {
@@ -42,6 +42,10 @@ const router = createBrowserRouter([
           <AddBooks></AddBooks>
         </PrivateRoute>
       },
+      {
+        path: '/singleCate/:id',
+        element: <SingleCategory></SingleCategory>
+      }
      
     ]
   },
