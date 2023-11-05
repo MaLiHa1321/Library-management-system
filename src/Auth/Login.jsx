@@ -23,6 +23,7 @@ const Login = () => {
      })
      .catch(err => {
       toast.error("invalid email or password")
+      return;
      })
   }
     return (

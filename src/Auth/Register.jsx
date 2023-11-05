@@ -27,15 +27,18 @@ const Register = () => {
 
 
     // validation
-    if(password.length < 6) {
+    if(password.length < 6) 
+    {
       toast.error('password should have 6 letter')
       return;
     }
-   if(!/[A-Z]/.test(password)){
+   if(!/[A-Z]/.test(password))
+   {
     toast.error("password should have atleast capital letter")
       return;
     }
-   if(!/[@$!%*?&]/.test(password)){
+   if(!/[@$!%*?&]/.test(password))
+   {
     toast.error("password should have atleast spcial character")
     return;
    }

@@ -28,12 +28,7 @@ const AuthProvider = ({children}) => {
             displayName: name, photoURL: photo
         })
     }
-    // logout
-    const logout = () =>{
-        setLoading(true)
-        return signOut(auth)
-    }
-
+   
      // create user with popup
      const googleLogin = () =>{
         setLoading(true)
@@ -42,11 +37,20 @@ const AuthProvider = ({children}) => {
 
     // current signin user
      useEffect(() =>{
-        onAuthStateChanged(auth, (user) =>{
+       const unsubscribe = onAuthStateChanged(auth, user =>{
             setUser(user)
             setLoading(false)
         })
+        return () =>{
+            return unsubscribe;
+        }
      },[] )
+      // logout
+    const logout = () =>{
+        setLoading(true)
+        return signOut(auth)
+    }
+
 
     //  console.log(user)
 

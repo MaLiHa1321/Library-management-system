@@ -19,6 +19,7 @@ import BookDeatils from './pages/BookDeatils.jsx';
 import MoreDetails from './pages/MoreDetails.jsx';
 import AllBooks from './pages/AllBooks/AllBooks.jsx';
 import UpdateBooks from './pages/UpdateBooks/UpdateBooks.jsx';
+import BorowBook from './pages/borrowedbook/BorowBook.jsx';
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         path: '/updateDetails/:id',
         element: <UpdateBooks></UpdateBooks>,
         loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+      },
+      {
+        path: '/borrowed',
+        element: <BorowBook></BorowBook>
       }
      
     ]
