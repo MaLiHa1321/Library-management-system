@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 
+
 const Navbar = () => {
     const {user, logout} = useAuth()
 
@@ -59,7 +60,7 @@ const Navbar = () => {
           </ul>
         </div>
           {/* theme changed */}
-  <div className='navbar-end'>
+  <div className='navbar-end mr-2'>
   <label className="swap swap-rotate">
   
   {/* this hidden checkbox controls the state */}
