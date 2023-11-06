@@ -20,12 +20,16 @@ const Novel = ({book,targetCategory}) => {
                       <div className="card-body">
                         <h2 className="card-title text-center"> {book.name}</h2>
                         <p className='text-base'>{book.des}</p>
-                        <p className='text-base'>Brand: {book.type}</p>
+                        <p className='text-base'>Category: {book.type}</p>
                         <p className='text-base'>Quantity: {book.quantity}</p>
-                        <p className='text-base'>Rating: {book.rating}</p>
-                        <div className="card-actions justify-end">
+                        <p className='text-base space-x-3'>
+                        <div className="rating">
+                      <input type="radio" name="rating-2"
+                       className="mask mask-star-2 bg-orange-400" /> {book.rating} </div>
+                           </p>
+                        <div className="card-actions justify-end w-full ">
                             <Link to={`/bookDetails/${book._id}`}>
-                     <button className="btn btn-primary">Details</button>
+                     <button className="btn btn-outline btn-warning">Details</button>
                             </Link>
                         </div>
                       </div>

@@ -75,9 +75,13 @@ const AllBooks = () => {
                <figure><img src={books.photo} alt="Shoes" className='w-full h-[200px] object-cover' /></figure>
                <div className="card-body">
                  <h2 className="card-title">{books.name}</h2>
-                 <p>{books.author}</p>
-                 <p>{books.type}</p>
-                 <p>{books.rating}</p>
+                 <p className='font-bold'>Author: {books.author}</p>
+                 <p>Category: {books.type}</p>
+                 <p className='mr-3'> <div className="rating">
+  <input type="radio"
+   name="rating-2"
+    className="mask mask-star-2 bg-orange-400" />  {books.rating} </div>
+                   </p>
                  <div className="card-actions justify-end">
                     <Link to={`/updateDetails/${books._id}`}>
                    <button className="btn btn-primary">Update</button>

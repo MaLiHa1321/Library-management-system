@@ -21,7 +21,7 @@ const Categories = () => {
     const {img,categories_name,_id} = category
     return (
         <Container>
-            <h2 className='text-2xl md:text-5xl font-bold text-center space-y-4 mt-12'>Our Categories</h2>
+            <h2 className='text-2xl md:text-5xl font-bold text-center space-y-4 mt-12'>Our <span className='text-orange-600'>Categories</span></h2>
             <p className='text-base  text-center space-y-4 m-12 '>These categories help librarians and patrons easily locate and access the materials they need. <br /> Library management categories typically encompass a wide range of items, <br /> including books, periodicals, multimedia materials, digital resources, and more. Here are some key aspects of library management categories</p>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 m-6'>
             {
@@ -35,7 +35,7 @@ const Categories = () => {
     
     <div className="card-actions">
         <Link to={`/singleCate/${cate._id}`}>
-      <button  className="btn btn-primary">Details</button>
+      <button  className="btn btn-outline btn-warning"> More Details </button>
         </Link>
     </div>
   </div>

@@ -37,10 +37,10 @@ const SingleCategory = () => {
         <div>
        
           {category ? (
-                <h2>{category?.categories_name}</h2>
+                <h2 className='text-center text-4xl font-bold text-orange-600 m-5' >{category?.categories_name}</h2>
 
             ) : (
-                <p>Category not found</p>
+                <p>Loading categories data....</p>
             )}
 
             

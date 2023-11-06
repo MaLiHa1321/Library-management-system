@@ -24,7 +24,7 @@ const url = `/cart?email=${userEmail}`;
     // delete operation
 const handleDelete = _id =>{
   console.log(_id)
-  const url1 = `http://localhost:5000/cart/${_id}`
+  const url1 = `/cart/${_id}`
 
     axios.delete(url1)
     .then(res =>{
