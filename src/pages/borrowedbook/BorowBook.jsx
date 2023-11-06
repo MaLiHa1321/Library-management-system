@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import useAxios from '../../hooks/useAxios';
 import Container from '../../routes/Container';
+import Swal from 'sweetalert2';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const BorowBook = () => {
@@ -17,10 +19,30 @@ const url = `/cart?email=${userEmail}`;
         .catch(err => console.log(err))
     },[url,axios])
     
-    const {returnDate,photo,name,type} = borrow
+    const {returnDate,photo,name,type,_id} = borrow
+    
+    // delete operation
+const handleDelete = _id =>{
+  console.log(_id)
+  const url1 = `http://localhost:5000/cart/${_id}`
+
+    axios.delete(url1)
+    .then(res =>{
+      if(res.data.deletedCount > 0){
+       toast.success("delete successful")
+        const remaining = borrow.filter(book => book._id !== _id)
+         setBorrow(remaining)
+      }
+    })
+    .catch(err => console.log(err))
+}
    
     return (
         <Container>
+         <Toaster
+        position="top-right"
+        reverseOrder={false}
+      />
 
         <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8'>
             {
@@ -31,7 +53,7 @@ const url = `/cart?email=${userEmail}`;
                   <p>categories: {book.type}</p>
                   <p>Return date: {book.returnDate}</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Return</button>
+                    <button onClick={() => handleDelete(book._id)} className="btn btn-primary">Return</button>
                   </div>
                 </div>
               </div>)

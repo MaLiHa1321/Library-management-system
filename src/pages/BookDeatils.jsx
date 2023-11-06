@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Container from '../routes/Container';
 import Swal from 'sweetalert2';
@@ -15,8 +15,8 @@ const BookDeatils = () => {
     // borrow book
 
 const handleBorrow = () => {
-    const order = { _id, name, photo, type, des, quantity, author, rating, email, displayName };
-  
+    const order = { name, photo, type, des, quantity, author, rating, email, displayName };
+ 
     Swal.fire({
       title: 'Submit your return date',
       html: `
@@ -36,17 +36,22 @@ const handleBorrow = () => {
         const returnDate = document.getElementById('returnDate').value;
         const borrowInfo = { returnDate, ...order };
   
+  
         try {
      axios.post('/cart', borrowInfo)
-        //   return response.data;
+  
         .then(res => {
+          if (res.data.insertedCount === 1){
+            
             Swal.fire({
                 title: 'Borrow Successful',
                 text: 'Your request has been submitted successfully.',
                 icon: 'success',
               });
+          }
         })
         } catch (error) {
+          
           Swal.showValidationMessage(`Request failed: ${error}`);
         }
       },
