@@ -55,12 +55,13 @@ const router = createBrowserRouter([
       {
         path: '/bookDetails/:id',
         element:  <PrivateRoute><BookDeatils></BookDeatils></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}`)
       },
       {
         path: '/moreDetail/:id',
         element: <MoreDetails></MoreDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
+        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}`)
+
       },
       {
         path: '/allbooks',
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
       {
         path: '/updateDetails/:id',
         element: <UpdateBooks></UpdateBooks>,
-        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}` )
+        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}` )
       },
       {
         path: '/borrowed',

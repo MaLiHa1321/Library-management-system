@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAxios from '../hooks/useAxios';
 import Novel from '../Category/Novel';
+import Container from '../routes/Container';
 
 
 const SingleCategory = () => {
@@ -20,7 +21,7 @@ const SingleCategory = () => {
         .then(res => setCateBook(res.data))
         .catch(err => console.log(err))
     }, [url,axios])
-    console.log(cateBook)
+    
     const category = cateBook?.find(cate => cate?._id === (id))
     const targetCategory = category?.categories_name;
 
@@ -31,11 +32,12 @@ const SingleCategory = () => {
         .catch(err => console.log(err))
     },[url1,axios])
 
-    console.log(book)
+ 
   
     return (
         <div>
-       
+          <Container>
+
           {category ? (
                 <h2 className='text-center text-4xl font-bold text-orange-600 m-5' >{category?.categories_name}</h2>
 
@@ -57,6 +59,8 @@ const SingleCategory = () => {
     <p>Loading categories data...</p>
   )}
             </div>
+          </Container>
+       
  
 
             

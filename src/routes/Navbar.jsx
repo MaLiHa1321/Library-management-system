@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from './Container';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../provider/AuthProvider';
+import useAuth from '../hooks/useAuth';
+
 
 const Navbar = () => {
-    const {user, logout} = useContext(AuthContext)
+    const {user, logout} = useAuth()
 
     // theme change state
   const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : "light");
@@ -31,7 +32,7 @@ const Navbar = () => {
    <NavLink className="mr-3 text-base font-bold" to='/addbook'>Add Book</NavLink>
    <NavLink className="mr-3 text-base font-bold" to='/allbooks'>All Book</NavLink>
    <NavLink className="mr-3 text-base font-bold" to='/borrowed'>Borrowed Books</NavLink>
-   <NavLink className="mr-3 text-base font-bold" to='/login'>Login</NavLink>
+  
    
     </>
     return (
@@ -47,9 +48,9 @@ const Navbar = () => {
             {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <a className=" normal-case text-xl">
             <img className='w-[60px]' src="https://i.ibb.co/YpHFyPV/png-clipart-abbe-regional-library-system-public-library-integrated-library-system-library-catalog-ot.png" alt="" />
-            <p className='text-sm md:text-2xl font-bold'>Grand Library</p>
+            <p className='hidden md:block lg:block text-orange-600  text-sm md:text-2xl  font-bold'>Grand Library</p>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -75,22 +76,20 @@ const Navbar = () => {
   
 </label>
 </div>
-        <div className="navbar-end">
+        <div className="navbar-center flex-row">
         {
       user?.email?
       <div>
-        <div className="flex items-center gap-4">
-        <img src={user.photoURL} alt="" className="w-[50px] h-[50px] rounded-full" />
-          <p className="text-xl items-center">{user.displayName}</p>
-        </div>
-      
-          <div>
-          <button onClick={logout} className="btn">Logout</button>
-          </div>
        
+        <div className="flex items-center lg:gap-4">
+      
+        <img src={user?.photoURL} alt="" className="w-[30px] object-cover h-[30px] rounded-full" />
+        <p className="text-sm items-center">{user?.displayName}</p>
+        <button onClick={logout} className="btn  btn-outline btn-warning">Logout</button>
+        </div>
 
       </div> :
-      <Link to="/login"><button  className="btn">Login</button></Link>
+      <Link to="/login"><button  className="btn  btn-outline btn-warning">Login</button></Link>
 
     }
         </div>

@@ -34,8 +34,7 @@ const AddBooks = () => {
             const product ={name,photo,type,des,quantity,author,rating}
             console.log(product)
 
-            axios
-            .post(url, product)
+            axios.post(url, product)
             .then((res) => {
               // Handle the response here (e.g., show a success toast)
               console.log(res.data);
@@ -61,29 +60,36 @@ const AddBooks = () => {
             position="top-right"
             reverseOrder={false}
           />
-                <h2>Add Book</h2>
-                 <div >
-                    <form onSubmit={handleaAdd} >
-            <div className="form-control">
+                <h2 className='text-center text-2xl font-bold'>Add Book</h2>
+                 <div className='m-5' >
+                 
+                    <form onSubmit={handleaAdd}  >
+                      <div className='flex flex-col md:flex-row gap-3'>
+
+            <div className="form-control flex-1">
               <label className="label">
-                <span className="label-text">name</span>
+                <span className="label-text">Name</span>
               </label>
               <input type="text" placeholder="name" name="name" className="input input-bordered" required />
             </div>
-            <div className="form-control">
+            <div className="form-control flex-1">
               <label className="label">
                 <span className="label-text">Image url</span>
               </label>
               <input type="text" placeholder="image url" name="photo" className="input input-bordered" required />
             </div>
-            <div className="form-control">
+                      </div>
+              
+                      <div className='flex flex-col md:flex-row gap-3'>
+
+            <div className="form-control flex-1">
               <label className="label">
                 <span className="label-text">Quantity</span>
               </label>
               <input type="text" placeholder="Quantity" name="Quantity" className="input input-bordered" required />
             </div>
            
-            <div className="form-control">
+            <div className="form-control flex-1">
                 <label className="label">
                   <span className="label-text">Category</span>
                 </label>
@@ -104,29 +110,38 @@ const AddBooks = () => {
                   ))}
                 </select>
               </div>
-           
-            <div className="form-control">
+                      </div>
+
+            <div className='flex flex-col md:flex-row gap-3'>
+            <div className="form-control flex-1">
               <label className="label">
                 <span className="label-text">Author Name</span>
               </label>
               <input type="text" placeholder="Author" name="AuthorName" className="input input-bordered" required />
             </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Description</span>
-              </label>
-              <textarea placeholder="description" type="text" name='des' className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
-            </div>
-            <div className="form-control">
+            <div className="form-control flex-1">
               <label className="label">
                 <span className="label-text">Rating</span>
               </label>
               <input type="text" placeholder="rating" name="rating" className="input input-bordered" required />
             </div>
+
+            </div>
+           
+           
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <textarea placeholder="description" type="text" name='des' className="textarea textarea-bordered textarea-lg w-full " ></textarea>
+            </div>
+            
             <div className="form-control m-6">
-              <button className="btn btn-primary">add Book</button>
+              <button className="btn btn-warning">add Book</button>
             </div>
                     </form>
+
+                   
                  </div>
                 
             </div>

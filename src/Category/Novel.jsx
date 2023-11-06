@@ -8,12 +8,12 @@ const Novel = ({book,targetCategory}) => {
                 ,photo,des,quantity
                 ,rating,_id,type} = book;
             const filteredBook = book?.filter(books => (books.type === targetCategory));
-            console.log(filteredBook)
+         
             return (
                 <Container>
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 gap-12'>
                          {filteredBook?.map((book, index) => (
-                    <div key={index} className="card w-78 bg-base-100 shadow-xl">
+                    <div key={index} className="card w-72 bg-base-100 shadow-xl">
                       <figure>
                         <img className='w-[200px] h-[200px]' src={book.photo} alt={book.name} />
                       </figure>

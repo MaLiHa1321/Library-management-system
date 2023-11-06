@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
-import { AuthContext } from '../provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import useAuth from '../hooks/useAuth';
 
 const Login = () => {
 
-  const {userLogin, user} = useContext(AuthContext)
+  const {userLogin, user} = useAuth()
   const location = useLocation();
   const navigate = useNavigate()
   const handleLogin = e =>{

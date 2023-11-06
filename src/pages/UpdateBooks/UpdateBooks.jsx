@@ -60,29 +60,34 @@ const UpdateBooks = () => {
  position="top-right"
  reverseOrder={false}
 />
-     <h2>Add Book</h2>
+     <h2 className='text-2xl text-center font-bold text-orange-600'>Update Book</h2>
       <div >
          <form onSubmit={handleUpdate} >
- <div className="form-control">
+          <div className='flex flex-col md:flex-row gap-3'>
+
+ <div className="form-control flex-1">
    <label className="label">
      <span className="label-text">name</span>
    </label>
    <input type="text" placeholder="name" name="name" defaultValue={name} className="input input-bordered" required />
  </div>
- <div className="form-control">
+ <div className="form-control flex-1">
    <label className="label">
      <span className="label-text">Image url</span>
    </label>
    <input type="text" placeholder="image url" name="photo" defaultValue={photo} className="input input-bordered" required />
  </div>
- <div className="form-control">
+          </div>
+          <div className='flex flex-col md:flex-row gap-3'>
+
+ <div className="form-control flex-1">
    <label className="label">
      <span className="label-text">Quantity</span>
    </label>
    <input type="text" placeholder="Quantity" name="Quantity" defaultValue={quantity} className="input input-bordered" required />
  </div>
 
- <div className="form-control">
+ <div className="form-control flex-1">
      <label className="label">
        <span className="label-text">Category</span>
      </label>
@@ -103,27 +108,33 @@ const UpdateBooks = () => {
        ))}
      </select>
    </div>
+          </div>
 
- <div className="form-control">
+          <div className='flex flex-col md:flex-row gap-3'>
+
+ <div className="form-control flex-1">
    <label className="label">
      <span className="label-text">Author Name</span>
    </label>
    <input type="text" placeholder="Author" name="AuthorName" defaultValue={author} className="input input-bordered" required />
  </div>
- <div className="form-control">
-   <label className="label">
-     <span className="label-text">Description</span>
-   </label>
-   <textarea placeholder="description" type="text" name='des' defaultValue={des} className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
- </div>
- <div className="form-control">
+ <div className="form-control flex-1">
    <label className="label">
      <span className="label-text">Rating</span>
    </label>
    <input type="text" placeholder="rating" name="rating" defaultValue={rating} className="input input-bordered" required />
  </div>
+          </div>
+
+ <div className="form-control">
+   <label className="label">
+     <span className="label-text">Description</span>
+   </label>
+   <textarea placeholder="description" type="text" name='des' defaultValue={des} className="textarea textarea-bordered textarea-lg w-full " ></textarea>
+ </div>
+ 
  <div className="form-control m-6">
-   <button className="btn btn-primary">add Book</button>
+   <button className="btn  btn-warning">update Book</button>
  </div>
          </form>
       </div>

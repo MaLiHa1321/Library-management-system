@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
-import { AuthContext } from '../provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import useAuth from '../hooks/useAuth';
 
 const Register = () => {
-  const {user, createUser,handleupdateProfile} = useContext(AuthContext)
+  const {user, createUser,handleupdateProfile} = useAuth()
   const navigate = useNavigate()
   const handleRegister = e =>{
     e.preventDefault()

@@ -56,8 +56,8 @@ const AllBooks = () => {
             <Container>
 
                 {/* filter */}
-                <div>
-                    <label htmlFor="bookType">Select a Book Type: </label>
+                <div className='m-7 flex justify-end w-1/4 border border-orange-600 rounded'>
+                    <label htmlFor="bookType" className='text-xl '>Select a Book Type: </label>
                     <select id="bookType" onChange={handleTypeChange} value={selectedType}>
                         <option value="">All</option>
                         {types.map((type) => (
@@ -71,7 +71,7 @@ const AllBooks = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12'> 
 
             {
-               (allBook.result)?.map(books => <div key={books._id} className="card w-78 bg-base-100 shadow-xl">
+               (allBook.result)?.map(books => <div key={books._id} className="card w-78 bg-base-100 shadow-2xl">
                <figure><img src={books.photo} alt="Shoes" className='w-full h-[200px] object-cover' /></figure>
                <div className="card-body">
                  <h2 className="card-title">{books.name}</h2>
@@ -84,7 +84,7 @@ const AllBooks = () => {
                    </p>
                  <div className="card-actions justify-end">
                     <Link to={`/updateDetails/${books._id}`}>
-                   <button className="btn btn-primary">Update</button>
+                   <button className="btn btn-outline btn-warning">Update</button>
                     </Link>
                  </div>
                </div>
@@ -93,7 +93,7 @@ const AllBooks = () => {
             </div>
 
             {/* pagination */}
-            <div>
+            <div className='flex justify-end m-6'>
             <div className="join">
   <button onClick={() => {handlePre}} className="join-item btn">pre</button>
 
@@ -103,7 +103,7 @@ const AllBooks = () => {
       <button
         key={index + 1}
         className={`${(index + 1) === page ?
-             "join-item btn btn-primary"
+             "join-item btn btn-outline btn-warning"
               : "join-item btn"}`}
         onClick={() => setPage(index + 1)} // Add 1 to index to start from page 1
       >

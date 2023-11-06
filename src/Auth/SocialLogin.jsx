@@ -23,6 +23,7 @@ const SocialLogin = () => {
         position="top-right"
         reverseOrder={false}
       />
+      
             <div onClick={() => handleSocialLogin(googleLogin)} >
 
             <button className='btn btn-success text-white'>Google</button>
