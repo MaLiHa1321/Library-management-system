@@ -86,7 +86,7 @@ const AddBooks = () => {
               <label className="label">
                 <span className="label-text">Quantity</span>
               </label>
-              <input type="text" placeholder="Quantity" name="Quantity" className="input input-bordered" required />
+              <input type="number" placeholder="Quantity" name="Quantity" min="1" max="10" className="input input-bordered" required />
             </div>
            
             <div className="form-control flex-1">
@@ -123,7 +123,7 @@ const AddBooks = () => {
               <label className="label">
                 <span className="label-text">Rating</span>
               </label>
-              <input type="text" placeholder="rating" name="rating" className="input input-bordered" required />
+              <input type="number" placeholder="rating" name="rating"  min="1" max="5" className="input input-bordered" required />
             </div>
 
             </div>

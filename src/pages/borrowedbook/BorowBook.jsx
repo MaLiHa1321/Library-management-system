@@ -34,7 +34,7 @@ const handleDelete = _id =>{
     axios.delete(url1)
     .then(res =>{
       if(res.data.deletedCount > 0){
-       toast.success("delete successful")
+       toast.success("Return book successful")
         const remaining = borrow.filter(book => book._id !== _id)
          setBorrow(remaining)
       }

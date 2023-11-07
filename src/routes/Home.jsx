@@ -5,6 +5,7 @@ import Categories from '../pages/Categories';
 import Feature from './Feature';
 import Benefit from './Benefit';
 import Team from './Team';
+import MiniBanner from './MiniBanner';
 
 const Home = () => {
    
@@ -13,8 +14,10 @@ const Home = () => {
             <Banner></Banner>
            <Categories></Categories>
            <Feature></Feature>
+           <MiniBanner></MiniBanner>
            <Benefit></Benefit>
            <Team></Team>
+           
             
         </div>
     );
