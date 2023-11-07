@@ -9,9 +9,9 @@ const UpdateBooks = () => {
     const axios = useAxios()
    
     
-        const [type, setType] = useState(''); // State for the selected type
+        const [type, setType] = useState(''); 
        
-        const types = ['Novel', 'Thriller', 'Sci-fi', 'Drama']; // Array of type options
+        const types = ['Novel', 'Thriller', 'Sci-Fi', 'Drama'];  
         const {_id,name,photo,des,quantity,author,rating} = booksData
 
         const handleTypeChange = (event) => {

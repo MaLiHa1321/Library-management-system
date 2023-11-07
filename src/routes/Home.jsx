@@ -8,7 +8,7 @@ import Team from './Team';
 import MiniBanner from './MiniBanner';
 
 const Home = () => {
-   
+
     return (
         <div className='space-y-7'>
             <Banner></Banner>

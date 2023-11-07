@@ -10,10 +10,10 @@ const AddBooks = () => {
     const axios = useAxios()
     const url ='/book'
     
-        const [type, setType] = useState(''); // State for the selected type
+        const [type, setType] = useState(''); 
        
-        const types = ['Novel', 'Thriller', 'Sci-Fi', 'Drama']; // Array of type options
-        // const [book, setBook] = useState([])
+        const types = ['Novel', 'Thriller', 'Sci-Fi', 'Drama']; 
+       
 
         const handleTypeChange = (event) => {
             setType(event.target.value);

@@ -3,9 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 import toast, { Toaster } from 'react-hot-toast';
 import useAuth from '../hooks/useAuth';
+import useAxios from '../hooks/useAxios';
 
 const Register = () => {
   const {user, createUser,handleupdateProfile} = useAuth()
+  const axios = useAxios()
   const navigate = useNavigate()
   const handleRegister = e =>{
     e.preventDefault()
@@ -14,38 +16,39 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password,name,photo)
+ 
+       // validation
+       if(password.length < 6){
+        toast.error("password should have atleast 6 character");
+        return;
+      }
+      if(!/[A-Z]/.test(password)){
+        toast.error("password should atleast capital letter");
+        return;
+      }
+      if(!/[@$%&*?]/.test(password)){
+        toast.error("password should atleast special letter");
+        return;
+      }
     createUser(email,password)
     .then(res => {
       handleupdateProfile(name,photo)
-      .then(() =>{
-        toast.success('user created successfully')
-        navigate('/')
-      })
+     .then(() => {
+      toast.success('User created successfull')
+         
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+    navigate('/')
+    
+     })
     })
     .catch(err => console.log(err))
 
-
-    // validation
-    if(password.length < 6) 
-    {
-      toast.error('password should have 6 letter')
-      return;
-    }
-   if(!/[A-Z]/.test(password))
-   {
-    toast.error("password should have atleast capital letter")
-      return;
-    }
-   if(!/[@$!%*?&]/.test(password))
-   {
-    toast.error("password should have atleast spcial character")
-    return;
-   }
  }
     return (
         <div>
-               <Toaster
+      <Toaster
         position="top-right"
         reverseOrder={false}
       />
