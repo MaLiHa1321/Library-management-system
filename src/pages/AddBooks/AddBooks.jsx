@@ -12,7 +12,7 @@ const AddBooks = () => {
     
         const [type, setType] = useState(''); // State for the selected type
        
-        const types = ['Novel', 'Thriller', 'Sci-fi', 'Drama']; // Array of type options
+        const types = ['Novel', 'Thriller', 'Sci-Fi', 'Drama']; // Array of type options
         // const [book, setBook] = useState([])
 
         const handleTypeChange = (event) => {
