@@ -38,9 +38,9 @@ const Team = () => {
                 
             <div className='text-center mt-8 space-y-3'>
 
-            <h2 className='text-[#FF3811] text-xl font-bold'>Team</h2>
-            <h2 className='text-2xl md:text-4xl font-bold'>Meet Our Team</h2>
-            <p className='text-base'>the majority have suffered alteration in some form, by injected humour, or <br /> randomised words which don't look even slightly believable. </p>
+           
+            <h2 className='text-2xl md:text-4xl font-bold mt-16'>Meet <span className='text-orange-600 font-bold'> Our Team</span></h2>
+            {/* <p className='text-base m-12'>The majority have suffered alteration in some form, by injected humour, or <br /> randomised words which don't look even slightly believable. </p> */}
             </div>
             {/* carrousel */}
             <div className='p-4'>

@@ -29,10 +29,10 @@ const Navbar = () => {
 
    
     const navLinks = <>
-   <NavLink className="mr-3 text-base font-bold" to='/'>Home</NavLink>
-   <NavLink className="mr-3 text-base font-bold" to='/addbook'>Add Book</NavLink>
-   <NavLink className="mr-3 text-base font-bold" to='/allbooks'>All Book</NavLink>
-   <NavLink className="mr-3 text-base font-bold" to='/borrowed'>Borrowed Books</NavLink>
+   <NavLink className="mr-4 text-xl font-bold" to='/'>Home</NavLink>
+   <NavLink className="mr-4 text-xl font-bold" to='/addbook'>Add Book</NavLink>
+   <NavLink className="mr-4 text-xl font-bold" to='/allbooks'>All Book</NavLink>
+   <NavLink className="mr-4 text-xl font-bold" to='/borrowed'>Borrowed Books</NavLink>
   
    
     </>

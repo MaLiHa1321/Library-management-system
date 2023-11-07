@@ -46,17 +46,17 @@ const AllBooks = () => {
     }
 
      const totalPage = parseInt( Math.ceil(allBook?.total /limit));
-    console.log(url)
+  
 
 
 
 
     return (
-        <div>
+        <div className='p-5'>
             <Container>
 
                 {/* filter */}
-                <div className='m-7 flex justify-end w-1/4 border border-orange-600 rounded'>
+                <div className='mb-12 lg:m-7 flex justify-end w-full md:w-1/3 lg:w-1/4 border border-orange-600 rounded'>
                     <label htmlFor="bookType" className='text-xl '>Select a Book Type: </label>
                     <select id="bookType" onChange={handleTypeChange} value={selectedType}>
                         <option value="">All</option>

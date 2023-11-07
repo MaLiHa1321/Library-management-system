@@ -31,7 +31,7 @@ const handleBorrow = () => {
       html: `
         <form id="borrow-form">
           <label for="returnDate">Return Date:</label>
-          <input type="date" id="returnDate" required> </br>
+          <input type="date" id="returnDate" border-2 border-black required> </br>
           <label for="email">Email:</label>
           <input type="email" id="email" value="${email}" readonly> </br>
           <label for="name">Name:</label>

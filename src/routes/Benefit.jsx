@@ -4,8 +4,8 @@ import Container from './Container';
 
 const Benefit = () => {
     return (
-        <div >
-            <h2 className='text-xl md:text-4xl font-bold text-center'> <span className='text-orange-600'>Benefits Of Our</span> Library Management System</h2>
+        <div className='mt-16' >
+            <h2 className='text-xl md:text-4xl font-bold text-center mt-16'> <span className='text-orange-600'>Benefits Of Our</span> Library Management System</h2>
              <p className='text-sm text-center m-8'>A Library management system (LMS) offers access to and deals with the assets in your library. A well-picked framework will expand your library's proficiency, <br /> spare significant organization time, lead to a superior instructive encounter for understudies and help create autonomous learning.</p>
              <Container>
 

@@ -61,13 +61,13 @@ const UpdateBooks = () => {
  reverseOrder={false}
 />
      <h2 className='text-2xl text-center font-bold text-orange-600'>Update Book</h2>
-      <div >
+      <div className='p-5'>
          <form onSubmit={handleUpdate} >
           <div className='flex flex-col md:flex-row gap-3'>
 
  <div className="form-control flex-1">
    <label className="label">
-     <span className="label-text">name</span>
+     <span className="label-text">Name</span>
    </label>
    <input type="text" placeholder="name" name="name" defaultValue={name} className="input input-bordered" required />
  </div>
