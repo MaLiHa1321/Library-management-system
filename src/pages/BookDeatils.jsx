@@ -14,6 +14,7 @@ const BookDeatils = () => {
     const {_id,name,photo,type,des,quantity,author,rating} = bookData;
     const axios = useAxios()
     const [isBorrowed, setIsBorrowed] = useState(false);
+    const [curQuantity, setCurQuantity] = useState(quantity)
     
     // borrow book
 
@@ -22,10 +23,10 @@ const handleBorrow = () => {
     toast.error("You have already borrowed this item.");
     return;
   }
-  
+  else{
 
-    const order = { name, photo, type, des, quantity, author, rating, email, displayName };
- 
+    const order = { name, photo, type, des, curQuantity, author, rating, email, displayName };
+  
     Swal.fire({
       title: 'Submit your return date',
       html: `
@@ -42,32 +43,47 @@ const handleBorrow = () => {
       confirmButtonText: 'Submit',
       showLoaderOnConfirm: true,
       preConfirm:  () => {
-        const returnDate = document.getElementById('returnDate').value;
-        const borrowInfo = { returnDate, ...order };
+        const returnDateInput = document.getElementById('returnDate').value;
+        const returnDate = returnDateInput;
   
+        if (!returnDate) {
+          toast.error('Please provide a return date.')
+          return;
+        }
+
+   const borrowInfo = { returnDate, ...order };
+    try {
+            axios.post('/cart', borrowInfo)
+            .then(res =>{
+              if (res.data.error) {
+            
+                toast.error("This item is already in your cart.");
+                return;
+              } else {
+                // If not in the cart, it was added successfully
+                toast.success("Successfully added to the cart");
+                setCurQuantity((newQuantity) => newQuantity - 1); 
+              }
+    
+            })
+    
+          
+          } catch (error) {
+            Swal.showValidationMessage(`Request failed: ${error}`);
+          }
+        
+      
+     
+        
   
       
-        try {
-          axios.post('/cart', borrowInfo)
-          .then(response =>{
-            if (response.data.error) {
-              // Show an error message to the user if the item is already in the cart
-              toast.error("This item is already in your cart.");
-              return;
-            } else {
-              // If not in the cart, it was added successfully
-              toast.success("Successfully added to the cart");
-            }
-
-          })
-  
-        
-        } catch (error) {
-          Swal.showValidationMessage(`Request failed: ${error}`);
-        }
       },
     })
     setIsBorrowed(true);
+  }
+  
+
+
    
   };
   
@@ -84,7 +100,7 @@ const handleBorrow = () => {
     <div className='w-full'>
       <h1 className="text-2xl lg:text-4xl font-bold">{name}</h1>
       <h1 className="text-xl m-2">category: {type}</h1>
-      <h1 className="text-xl m-2">Quantity: {quantity}</h1>
+      <h1 className="text-xl m-2">Quantity: {curQuantity}</h1>
       <h1 className="text-xl m-2">Author: {author}</h1>
       <p className='text-base space-x-3'>
                         <div className="rating">
