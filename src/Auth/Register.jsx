@@ -78,7 +78,7 @@ const Register = () => {
         </div>
         <p>Already have an account? <span className='text-blue-400'><Link to="/login">Login</Link></span></p>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-warning">Register</button>
         </div>
         <div className='mt-5'>
           <SocialLogin></SocialLogin>

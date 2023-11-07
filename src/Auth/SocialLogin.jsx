@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
+import { BiLogoGoogle } from 'react-icons/bi';
 
 
 const SocialLogin = () => {
@@ -24,9 +25,9 @@ const SocialLogin = () => {
         reverseOrder={false}
       />
       
-            <div onClick={() => handleSocialLogin(googleLogin)} >
+            <div onClick={() => handleSocialLogin(googleLogin)} className='text-center' >
 
-            <button className='btn btn-success text-white'>Google</button>
+            <button className='btn btn-warning  text-4xl'><BiLogoGoogle></BiLogoGoogle></button>
             </div>
             
         </div>

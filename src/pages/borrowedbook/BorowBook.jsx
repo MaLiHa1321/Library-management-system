@@ -10,9 +10,7 @@ const BorowBook = () => {
     const {user} = useAuth()
     const userEmail = user?.email;
 const url = `/cart?email=${userEmail}`;
-    const axios = useAxios()
-
-    const existItem = borrow.find*
+    const axios = useAxios();
 
     useEffect(()=>{
         axios.get(url)
