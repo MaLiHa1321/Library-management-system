@@ -38,6 +38,8 @@ const handleDelete = _id =>{
       }
     })
     .catch(err => console.log(err))
+
+  
 }
    
     return (

@@ -19,6 +19,12 @@ const Login = () => {
      userLogin(email,password)
      .then(res => {
       toast.success('login successful')
+
+        // windows refresh
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+
       navigate(location?.state ? location?.state : '/')
      })
      .catch(err => {
