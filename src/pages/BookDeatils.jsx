@@ -19,13 +19,14 @@ const BookDeatils = () => {
     // borrow book
 
 const handleBorrow = () => {
-  if (isBorrowed) {
-    toast.error("You have already borrowed this item.");
-    return;
-  }
-  else{
+  
 
     const order = { name, photo, type, des, curQuantity, author, rating, email, displayName };
+     
+    if (isBorrowed) {
+      toast.error("You have already borrowed this item.");
+      return;
+    }
   
     Swal.fire({
       title: 'Submit your return date',
@@ -60,7 +61,7 @@ const handleBorrow = () => {
                 toast.error("This item is already in your cart.");
                 return;
               } else {
-                // If not in the cart, it was added successfully
+              
                 toast.success("Successfully added to the cart");
                 setCurQuantity((newQuantity) => newQuantity - 1); 
               }
@@ -73,14 +74,14 @@ const handleBorrow = () => {
           }
         
       
-     
+          setIsBorrowed(true);
+        
         
   
       
       },
     })
-    setIsBorrowed(true);
-  }
+  
   
 
 
