@@ -8,6 +8,17 @@ Basically my project is based on Library management system. Here the feature are
 - User can borrow the book and can return the book also.
 - User can add and update and read about specific book.
 
+# Technology I used
+
+- Javascript
+- Tailwind Css
+- Daisyui
+- React js
+- Node js
+- Express js
+- Mongodb
+
+
 Live link of this project:
 
 https://library-management-7f05c.web.app
