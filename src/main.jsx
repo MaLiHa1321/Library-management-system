@@ -20,6 +20,8 @@ import MoreDetails from './pages/MoreDetails.jsx';
 import AllBooks from './pages/AllBooks/AllBooks.jsx';
 import UpdateBooks from './pages/UpdateBooks/UpdateBooks.jsx';
 import BorowBook from './pages/borrowedbook/BorowBook.jsx';
+import ReviewBook from './pages/ReviewBook/ReviewBook.jsx';
+import ReviewSection from './pages/ReviewBook/ReviewSection.jsx';
 
 const router = createBrowserRouter([
   {
@@ -55,12 +57,12 @@ const router = createBrowserRouter([
       {
         path: '/bookDetails/:id',
         element:  <PrivateRoute><BookDeatils></BookDeatils></PrivateRoute>,
-        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
       },
       {
         path: '/moreDetail/:id',
         element: <MoreDetails></MoreDetails>,
-        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}`)
 
       },
       {
@@ -73,7 +75,7 @@ const router = createBrowserRouter([
       {
         path: '/updateDetails/:id',
         element: <UpdateBooks></UpdateBooks>,
-        loader: ({params}) => fetch(`https://library-management-server-sepia.vercel.app/book/${params.id}` )
+        loader: ({params}) => fetch(`http://localhost:5000/book/${params.id}` )
       },
       {
         path: '/borrowed',
@@ -81,6 +83,18 @@ const router = createBrowserRouter([
 
           <BorowBook></BorowBook>
         </PrivateRoute>
+      },
+      {
+        path: '/reviewSection',
+        element: <ReviewSection></ReviewSection>
+      },
+      {
+        path: '/review/:id',
+        element:  <PrivateRoute>
+
+          <ReviewBook></ReviewBook>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
       }
      
     ]

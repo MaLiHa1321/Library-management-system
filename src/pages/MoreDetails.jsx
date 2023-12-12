@@ -20,6 +20,9 @@ const MoreDetails = () => {
 <Link to='/'>
       <button className="btn btn-outline btn-warning">Go Home</button>
 </Link>
+<Link to={`/review/${_id}`}>
+      <button className="btn btn-outline btn-warning">Give Review</button>
+</Link>
     </div>
   </div>
 </div>

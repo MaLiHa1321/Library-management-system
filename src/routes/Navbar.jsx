@@ -31,9 +31,21 @@ const Navbar = () => {
    
     const navLinks = <>
    <NavLink className="mr-4 text-xl font-bold" to='/'>Home</NavLink>
-   <NavLink className="mr-4 text-xl font-bold" to='/addbook'>Add Book</NavLink>
-   <NavLink className="mr-4 text-xl font-bold" to='/allbooks'>All Book</NavLink>
-   <NavLink className="mr-4 text-xl font-bold" to='/borrowed'>Borrowed Books</NavLink>
+   {
+  user?.email === 'abc201@gmail.com' ? (
+    <>
+      <NavLink className="mr-4 text-xl font-bold" to='/addbook'>Add Book</NavLink>
+      <NavLink className="mr-4 text-xl font-bold" to='/allbooks'>All Book</NavLink>
+    </>
+  ) : (
+    <>
+    <NavLink className="mr-4 text-xl font-bold" to='/borrowed'>Borrowed Books</NavLink>
+    <NavLink className="mr-4 text-xl font-bold" to='/reviewSection'>See Review </NavLink>
+    </>
+  )
+}
+  
+ 
   
    
     </>
