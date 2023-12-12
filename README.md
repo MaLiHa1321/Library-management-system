@@ -6,7 +6,11 @@ Basically my project is based on Library management system. Here the feature are
 - User can find out the categories of books by filtering.
 - User can Login and register this website.
 - User can borrow the book and can return the book also.
-- User can add and update and read about specific book.
+- Only admin can add and update book.
+- Admin_email: abc201@gmail.com
+- Admin_pass: 123ABC@
+- user can see the book review.
+
 
 # Technology I used
 
